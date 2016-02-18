@@ -24,7 +24,7 @@ LIB_FLAG += $(shell pkg-config  --libs libsystemd)
 %.o: objects/pflash/libflash/%.c
 	$(CC) -c -o obj/$@ $< $(CFLAGS) $(INCLUDES)
 
-all: setup libopenbmc_intf power_control led_controller button_power button_reset control_host host_watchdog board_vpd pcie_slot_present flash_bios flasher pflash hwmons_barreleye control_bmc
+all: setup libopenbmc_intf power_control led_controller button_power button_reset control_host host_watchdog board_vpd pcie_slot_present flash_bios flasher pflash hwmons_barreleye control_bmc i2craw info
 
 setup: 
 	mkdir -p obj lib
@@ -75,3 +75,8 @@ hwmons_barreleye: hwmons_barreleye.o object_mapper.o libopenbmc_intf
 control_bmc: control_bmc_obj.o libopenbmc_intf
 	$(CC) -o bin/$@.exe obj/control_bmc_obj.o $(LDFLAGS) $(LIBS)
 
+i2craw:  $(OBJS2) i2craw.o
+        $(CC) -o bin/$@ obj/i2craw.o $(LDFLAGS)
+
+info:   info.o
+        $(CC) -o bin/$@ obj/info.o $(LDFLAGS) $(LIBS_info)
