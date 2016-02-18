@@ -76,7 +76,7 @@ control_bmc: control_bmc_obj.o libopenbmc_intf
 	$(CC) -o bin/$@.exe obj/control_bmc_obj.o $(LDFLAGS) $(LIBS)
 
 i2craw:  $(OBJS2) i2craw.o
-        $(CC) -o bin/$@ obj/i2craw.o $(LDFLAGS)
+	$(CC) -o bin/$@ obj/i2craw.o $(LDFLAGS)
 
 info:   info.o
-        $(CC) -o bin/$@ obj/info.o $(LDFLAGS) $(LIBS_info)
+	$(CC) -o bin/$@ obj/info.o $(LDFLAGS) $(LIBS_info)
