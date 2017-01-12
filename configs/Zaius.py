@@ -282,9 +282,9 @@ GPIO_CONFIG['BMC_CP0_PERST_ENABLE'] = \
 GPIO_CONFIG['BMC_UCD_LATCH_LE'] = \
         {'gpio_pin': 'B4', 'direction': 'out'}
 GPIO_CONFIG['FSI_DATA'] = \
-        {'gpio_pin': 'E0', 'direction': 'out'}
+        {'gpio_pin': 'C2', 'direction': 'out'}
 GPIO_CONFIG['FSI_CLK'] = \
-        {'gpio_pin': 'AA0', 'direction': 'out'}
+        {'gpio_pin': 'C3', 'direction': 'out'}
 GPIO_CONFIG['FSI_ENABLE'] = \
         {'gpio_pin': 'D0', 'direction': 'out'}
 GPIO_CONFIG['CRONUS_SEL'] = \
