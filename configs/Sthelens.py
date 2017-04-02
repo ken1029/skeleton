@@ -1,11 +1,26 @@
 #! /usr/bin/python
 
+from os.path import join
+from glob import glob
+
 HOME_PATH = './'
 CACHE_PATH = '/var/cache/obmc/'
 FLASH_DOWNLOAD_PATH = "/tmp"
 GPIO_BASE = 320
 SYSTEM_NAME = "StHelens"
 
+def find_gpio_base(path="/sys/class/gpio/"):
+    pattern = "gpiochip*"
+    for gc in glob(join(path, pattern)):
+        with open(join(gc, "label")) as f:
+            label = f.readline().strip()
+        if label == "1e780000.gpio":
+            with open(join(gc, "base")) as f:
+                return int(f.readline().strip())
+    # trigger a file not found exception
+    open(join(path, "gpiochip"))
+
+GPIO_BASE = find_gpio_base()
 
 ## System states
 ##   state can change to next state in 2 ways:
@@ -284,12 +299,13 @@ GPIO_CONFIG['POWER_PIN'] = { 'gpio_pin': 'M3', 'direction': 'out' }
 GPIO_CONFIG['POWER_STATE_LED'] = { 'gpio_pin': 'F2', 'direction': 'out', 'inverse': 'yes' }
 
 def convertGpio(name):
-	name = name.upper()
-	c = name[0:1]
-	offset = int(name[1:])
-	a = ord(c)-65
-	base = a*8+GPIO_BASE
-	return base+offset
+    offset = int(filter(str.isdigit, name))
+    port = filter(str.isalpha, name.upper())
+    a = ord(port[-1]) - ord('A')
+    if len(port) > 1:
+        a += 26
+    base = a * 8 + GPIO_BASE
+    return base + offset
 
 SENSOR_MONITOR_CONFIG = [
 	['/org/openbmc/sensors/gpu/gpu1_temp', { 'object_path' : '/tmp/gpu/gpu1_temp','poll_interval' : 5000,'scale' : 1,'units' : 'C'}],
