@@ -338,8 +338,10 @@ SENSOR_MONITOR_CONFIG = [
 	['/org/openbmc/sensors/pmbus/pmbus01/temp_01', { 'object_path' : '/sys/class/hwmon/hwmon9/temp1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus01/temp_02', { 'object_path' : '/sys/class/hwmon/hwmon9/temp2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus01/temp_03', { 'object_path' : '/sys/class/hwmon/hwmon9/temp3_input','poll_interval' : 10000,'scale' : 1000, 'units' : 'C','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus01/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon9/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus01/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon9/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
+	['/org/openbmc/sensors/pmbus/pmbus01/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon9/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '39', 'critical_upper' : '240', 'critical_lower' : '100', 'min_reading' : '0', 'max_reading' : '300'}],
+	['/org/openbmc/sensors/pmbus/pmbus01/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon9/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '40', 'critical_upper' : '13.2', 'critical_lower' : '10.8', 'min_reading' : '0', 'max_reading' : '20'}],
 	['/org/openbmc/sensors/pmbus/pmbus01/Current_iin', { 'object_path' : '/sys/class/hwmon/hwmon9/curr1_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus01/Current_iout', { 'object_path' : '/sys/class/hwmon/hwmon9/curr2_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus01/Power_pin', { 'object_path' : '/sys/class/hwmon/hwmon9/power1_input','poll_interval' : 10000,'scale' : 1000000,'units' : 'W','value' : 0}],
@@ -348,8 +350,10 @@ SENSOR_MONITOR_CONFIG = [
 	['/org/openbmc/sensors/pmbus/pmbus02/temp_01', { 'object_path' : '/sys/class/hwmon/hwmon10/temp1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus02/temp_02', { 'object_path' : '/sys/class/hwmon/hwmon10/temp2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus02/temp_03', { 'object_path' : '/sys/class/hwmon/hwmon10/temp3_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus02/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon10/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus02/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon10/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
+	['/org/openbmc/sensors/pmbus/pmbus02/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon10/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '41', 'critical_upper' : '240', 'critical_lower' : '100', 'min_reading' : '0', 'max_reading' : '300'}],
+	['/org/openbmc/sensors/pmbus/pmbus02/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon10/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '42', 'critical_upper' : '13.2', 'critical_lower' : '10.8', 'min_reading' : '0', 'max_reading' : '20'}],
 	['/org/openbmc/sensors/pmbus/pmbus02/Current_iin', { 'object_path' : '/sys/class/hwmon/hwmon10/curr1_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus02/Current_iout', { 'object_path' : '/sys/class/hwmon/hwmon10/curr2_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus02/Power_pin', { 'object_path' : '/sys/class/hwmon/hwmon10/power1_input','poll_interval' : 10000,'scale' : 1000000,'units' : 'W','value' : 0}],
@@ -358,8 +362,10 @@ SENSOR_MONITOR_CONFIG = [
 	['/org/openbmc/sensors/pmbus/pmbus03/temp_01', { 'object_path' : '/sys/class/hwmon/hwmon11/temp1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus03/temp_02', { 'object_path' : '/sys/class/hwmon/hwmon11/temp2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus03/temp_03', { 'object_path' : '/sys/class/hwmon/hwmon11/temp3_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus03/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon11/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus03/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon11/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
+	['/org/openbmc/sensors/pmbus/pmbus03/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon11/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '43', 'critical_upper' : '240', 'critical_lower' : '100', 'min_reading' : '0', 'max_reading' : '300'}],
+	['/org/openbmc/sensors/pmbus/pmbus03/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon11/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '44', 'critical_upper' : '13.2', 'critical_lower' : '10.8', 'min_reading' : '0', 'max_reading' : '20'}],
 	['/org/openbmc/sensors/pmbus/pmbus03/Current_iin', { 'object_path' : '/sys/class/hwmon/hwmon11/curr1_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus03/Current_iout', { 'object_path' : '/sys/class/hwmon/hwmon11/curr2_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus03/Power_pin', { 'object_path' : '/sys/class/hwmon/hwmon11/power1_input','poll_interval' : 10000,'scale' : 1000000,'units' : 'W','value' : 0}],
@@ -368,8 +374,10 @@ SENSOR_MONITOR_CONFIG = [
 	['/org/openbmc/sensors/pmbus/pmbus04/temp_01', { 'object_path' : '/sys/class/hwmon/hwmon12/temp1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus04/temp_02', { 'object_path' : '/sys/class/hwmon/hwmon12/temp2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus04/temp_03', { 'object_path' : '/sys/class/hwmon/hwmon12/temp3_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus04/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon12/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus04/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon12/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
+	['/org/openbmc/sensors/pmbus/pmbus04/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon12/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '45', 'critical_upper' : '240', 'critical_lower' : '100', 'min_reading' : '0', 'max_reading' : '300'}],
+	['/org/openbmc/sensors/pmbus/pmbus04/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon12/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '46', 'critical_upper' : '13.2', 'critical_lower' : '10.8', 'min_reading' : '0', 'max_reading' : '20'}],
 	['/org/openbmc/sensors/pmbus/pmbus04/Current_iin', { 'object_path' : '/sys/class/hwmon/hwmon12/curr1_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus04/Current_iout', { 'object_path' : '/sys/class/hwmon/hwmon12/curr2_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus04/Power_pin', { 'object_path' : '/sys/class/hwmon/hwmon12/power1_input','poll_interval' : 10000,'scale' : 1000000,'units' : 'W','value' : 0}],
@@ -378,8 +386,10 @@ SENSOR_MONITOR_CONFIG = [
 	['/org/openbmc/sensors/pmbus/pmbus05/temp_01', { 'object_path' : '/sys/class/hwmon/hwmon13/temp1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus05/temp_02', { 'object_path' : '/sys/class/hwmon/hwmon13/temp2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus05/temp_03', { 'object_path' : '/sys/class/hwmon/hwmon13/temp3_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus05/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon13/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus05/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon13/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
+	['/org/openbmc/sensors/pmbus/pmbus05/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon13/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '47', 'critical_upper' : '240', 'critical_lower' : '100', 'min_reading' : '0', 'max_reading' : '300'}],
+	['/org/openbmc/sensors/pmbus/pmbus05/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon13/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '48', 'critical_upper' : '13.2', 'critical_lower' : '10.8', 'min_reading' : '0', 'max_reading' : '20'}],
 	['/org/openbmc/sensors/pmbus/pmbus05/Current_iin', { 'object_path' : '/sys/class/hwmon/hwmon13/curr1_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus05/Current_iout', { 'object_path' : '/sys/class/hwmon/hwmon13/curr2_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus05/Power_pin', { 'object_path' : '/sys/class/hwmon/hwmon13/power1_input','poll_interval' : 10000,'scale' : 1000000,'units' : 'W','value' : 0}],
@@ -388,8 +398,10 @@ SENSOR_MONITOR_CONFIG = [
 	['/org/openbmc/sensors/pmbus/pmbus06/temp_01', { 'object_path' : '/sys/class/hwmon/hwmon14/temp1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus06/temp_02', { 'object_path' : '/sys/class/hwmon/hwmon14/temp2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus06/temp_03', { 'object_path' : '/sys/class/hwmon/hwmon14/temp3_input','poll_interval' : 10000,'scale' : 1000,'units' : 'C','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus06/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon14/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
-	['/org/openbmc/sensors/pmbus/pmbus06/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon14/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0}],
+	['/org/openbmc/sensors/pmbus/pmbus06/Voltage_vin', { 'object_path' : '/sys/class/hwmon/hwmon14/in1_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '49', 'critical_upper' : '240', 'critical_lower' : '100', 'min_reading' : '0', 'max_reading' : '300'}],
+	['/org/openbmc/sensors/pmbus/pmbus06/Voltage_vout', { 'object_path' : '/sys/class/hwmon/hwmon14/in2_input','poll_interval' : 10000,'scale' : 1000,'units' : 'V','value' : 0,
+	    'sensornumber' : '50', 'critical_upper' : '13.2', 'critical_lower' : '10.8', 'min_reading' : '0', 'max_reading' : '20'}],
 	['/org/openbmc/sensors/pmbus/pmbus06/Current_iin', { 'object_path' : '/sys/class/hwmon/hwmon14/curr1_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus06/Current_iout', { 'object_path' : '/sys/class/hwmon/hwmon14/curr2_input','poll_interval' : 10000,'scale' : 1,'units' : 'mA','value' : 0}],
 	['/org/openbmc/sensors/pmbus/pmbus06/Power_pin', { 'object_path' : '/sys/class/hwmon/hwmon14/power1_input','poll_interval' : 10000,'scale' : 1000000,'units' : 'W','value' : 0}],
@@ -399,50 +411,50 @@ SENSOR_MONITOR_CONFIG = [
 HWMON_CONFIG = {
 	'21-0048' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP1','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP1','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x10',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 	'21-0049' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP2','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP2','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x11',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 	'21-004a' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP3','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP3','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x12',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 	'21-004b' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP4','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP4','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x13',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 	'21-004c' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP5','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP5','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x14',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 	'21-004d' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP6','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP6','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x15',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 	'21-004e' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP7','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP7','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x16',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 	'21-004f' :  {
 		'names' : {
-			'temp1_input' : { 'object_path' : 'temperature/TMP8','poll_interval' : 5000,'scale' : 1000,'units' : 'C',
-					'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
+            'temp1_input' : { 'object_path' : 'temperature/TMP8','poll_interval' : 5000,'scale' : 1000,'units' : 'C', 'sensor_type' : '0x01', 'sensornumber' : '0x17',
+                'reading_type' : '0x01', 'critical_upper' : 40, 'critical_lower' : -100, 'warning_upper' : 36, 'warning_lower' : -99, 'emergency_enabled' : True },
 		}
 	},
 }
