@@ -8,7 +8,7 @@
 
 /*----------------------------------------------------------------*/
 /* Main Event Loop                                                */
-#define PHYSICAL_I2C 8
+#define PHYSICAL_I2C 7
 #define PSU_NUM 6
 
 int
