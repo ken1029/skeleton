@@ -10,6 +10,10 @@
 /* Main Event Loop                                                */
 #define PHYSICAL_I2C 7
 #define PSU_NUM 6
+#define LM25066_I2C 0
+#define LM25066_NUM_1 2
+#define LM25066_NUM_2 8
+
 
 int
 main(int argc, char *argv[])
@@ -24,5 +28,23 @@ main(int argc, char *argv[])
         printf("%s\n", buff_path);
         system(buff_path);
     }
+
+    /* Init lm25066 node */
+    for(i=0; i<LM25066_NUM_1; i++)
+    {
+        sprintf(buff_path, "echo lm25066 0x%x > /sys/bus/i2c/devices/i2c-%d/new_device",0x10+i, LM25066_I2C);
+        printf("%s\n", buff_path);
+        system(buff_path);
+    }
+
+    for(i=0; i<LM25066_NUM_2; i++)
+    {
+        sprintf(buff_path, "echo lm25066 0x%x > /sys/bus/i2c/devices/i2c-%d/new_device",0x40+i, LM25066_I2C);
+        printf("%s\n", buff_path);
+        system(buff_path);
+    }
+
+
     return 0;
 }
+
