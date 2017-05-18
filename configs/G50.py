@@ -414,7 +414,7 @@ def _add_psu_voltage_sensor(configs, index, sensornumber, bus_number):
     config = ['/org/openbmc/sensors/pmbus/pmbus0%d/Voltage_vout' % index, {
         'bus_number': bus_number,
         'critical_lower': 10.5,
-        'critical_upper': 14.25,
+        'critical_upper': 13,
         'device_node': 'in2_input',
         'max_reading': '20',
         'min_reading': '0',
@@ -434,7 +434,7 @@ def _add_psu_voltage_sensor(configs, index, sensornumber, bus_number):
 def _add_psu_power_sensor(configs, index, sensornumber, bus_number):
     config = ['/org/openbmc/sensors/pmbus/pmbus0%d/Power_pout' % index, {
         'bus_number': bus_number,
-        'critical_upper': 1760,
+        'critical_upper': 700,
         'device_node': 'power2_input',
         'object_path': 'sensors/pmbus/pmbus0%d/Power_pout' % index,
         'poll_interval': 10000,
